@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 import Link from "next/link";
 import axios from "axios";
-import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
@@ -16,6 +16,7 @@ const Login = () => {
   });
   const [isValidData, setIsValidData] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const onLogin = async () => {
     try {
@@ -38,7 +39,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1>{loading ? "Processing" : "Login"}</h1>
+      <h1 className="text-2xl mb-4">{loading ? "Processing..." : "Login"}</h1>
       <hr />
 
       <label htmlFor="email">Email</label>
@@ -54,16 +55,28 @@ const Login = () => {
       />
 
       <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        type="text"
-        value={user.password}
-        onChange={(e) =>
-          setUser((prev) => ({ ...prev, password: e.target.value }))
-        }
-        placeholder="password"
-        className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
-      />
+      <div className="relative flex item-center">
+        <input
+          id="password"
+          type={showPassword ? "text" : "password"}
+          autoComplete="new-password"
+          value={user.password}
+          onChange={(e) =>
+            setUser((prev) => ({ ...prev, password: e.target.value }))
+          }
+          placeholder="password"
+          className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
+        />
+        <button
+          onClick={() => setShowPassword(!showPassword)}
+          type="button"
+          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+        >
+          <span className="text-black mb-4">
+            {showPassword ? "Hide" : "Show"}
+          </span>
+        </button>
+      </div>
 
       <button
         disabled={!isValidData}
@@ -76,6 +89,7 @@ const Login = () => {
       </button>
 
       <Link href="/signup">Visit Sign Up Page</Link>
+      <Toaster />
     </div>
   );
 };

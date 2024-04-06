@@ -17,6 +17,7 @@ const SignUp = () => {
   });
   const [isValidData, setIsValidData] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSignUp = async () => {
     try {
@@ -46,7 +47,7 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1>{loading ? "Processing" : "Signup"}</h1>
+      <h1 className="text-2xl mb-4">{loading ? "Processing" : "Sign Up"}</h1>
       <hr />
       <label htmlFor="username">Username</label>
       <input
@@ -73,16 +74,28 @@ const SignUp = () => {
       />
 
       <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        type="text"
-        value={user.password}
-        onChange={(e) =>
-          setUser((prev) => ({ ...prev, password: e.target.value }))
-        }
-        placeholder="password"
-        className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
-      />
+      <div className="relative flex item-center">
+        <input
+          id="password"
+          type={showPassword ? "text" : "password"}
+          autoComplete="new-password"
+          value={user.password}
+          onChange={(e) =>
+            setUser((prev) => ({ ...prev, password: e.target.value }))
+          }
+          placeholder="password"
+          className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
+        />
+        <button
+          onClick={() => setShowPassword(!showPassword)}
+          type="button"
+          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+        >
+          <span className="text-black mb-4">
+            {showPassword ? "Hide" : "Show"}
+          </span>
+        </button>
+      </div>
 
       <button
         disabled={!isValidData}
