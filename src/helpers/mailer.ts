@@ -23,7 +23,7 @@ export const sendEmail = async ({
     if (emailType === EmailType.VERIFY) {
       await User.findByIdAndUpdate(userId, {
         verifyToken: hashedToken,
-        verifyTokenExpiry: Date.now() + 3600000,
+        verifyTokenExpiry: Date.now() + 3600000, // Expiry 1 hour from now
       });
     } else if (emailType === EmailType.RESET) {
       await User.findByIdAndUpdate(userId, {
@@ -54,7 +54,7 @@ export const sendEmail = async ({
         emailType === EmailType.VERIFY
           ? "verify your email"
           : "reset your password"
-      } or copy and paste the link below i your browser.
+      } or copy and paste the link below in your browser.
         <br>
         ${process.env.DOMAIN}/verifyemail?token=${hashedToken}
       </p>`,
