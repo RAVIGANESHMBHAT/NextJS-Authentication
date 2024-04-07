@@ -1,4 +1,4 @@
-# Next.js Authentication App
+![tuxpi com 1712474260](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/9dce2343-870f-4dbb-9e19-1249fc2a6ea2)# Next.js Authentication App
 
 Explore a Next.js application designed to seamlessly integrate user authentication, providing a secure and intuitive user experience. This repository contains a fully functional Next.js project featuring a robust authentication system, complete with login, logout, and signup functionalities. Utilizing modern technologies such as Axios for API requests and react-hot-toast for elegant notifications, this app showcases best practices in handling user sessions and protecting routes.
 
@@ -18,6 +18,15 @@ Whether you're looking to implement authentication in your Next.js project or se
 ## Screenshots
 - Sign Up
   ![tuxpi com 1712470719](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/75e42e47-e09f-4178-9830-6f51dd757839)
+
+- Verify Email
+  ![tuxpi com 1712472322](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/4d8c5b0b-d904-4d69-ad78-77dc39db1b48)
+
+- Successful Email Verification
+  ![tuxpi com 1712474204](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/95ab39f6-e7cf-4f5e-af4b-2dae34f81baa)
+
+- Failed to Verify Email
+  ![tuxpi com 1712474260](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/77d2b1a2-11f5-40a9-bccd-7efded18f141)
 
 - Login
   ![tuxpi com 1712470649](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/8de32408-99f8-4a2c-8847-50fef069897e)
