@@ -65,7 +65,9 @@ or
 yarn install
 ```
 
-4. Run the development server
+4. Create `.env` file and enter valid data. (Refer to `.env.sample` file)
+
+5. Run the development server
 ```bash
 npm run dev
 ```
