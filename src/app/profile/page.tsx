@@ -27,30 +27,45 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1>Profile Page</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-50">
+      <div className="w-full max-w-md p-6 space-y-4 bg-white rounded-xl shadow-md">
+        <h1 className="text-xl font-semibold text-center text-gray-800">
+          Profile Page
+        </h1>
 
-      <hr />
+        <hr className="border-gray-300" />
 
-      <h2>
-        {data ? <Link href={`/profile/${data}`}>View Profile - {data}</Link> : "No data"}
-      </h2>
+        <h2 className="text-center">
+          {data ? (
+            <Link
+              href={`/profile/${data}`}
+              className="text-blue-500 hover:underline"
+            >
+              View Profile - {data}
+            </Link>
+          ) : (
+            "No data"
+          )}
+        </h2>
 
-      <hr />
+        <hr className="border-gray-300" />
 
-      <button
-        onClick={getUserDetails}
-        className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Get user details
-      </button>
+        <div className="flex flex-col space-y-2">
+          <button
+            onClick={getUserDetails}
+            className="text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+          >
+            Get User Details
+          </button>
 
-      <button
-        onClick={logout}
-        className="bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Logout
-      </button>
+          <button
+            onClick={logout}
+            className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

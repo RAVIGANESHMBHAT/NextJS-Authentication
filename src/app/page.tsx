@@ -22,23 +22,36 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-center my-4 flex-col gap-4">
-      <h1 className="text-2xl font-bold">NextJS Authentication</h1>
-      <p>
-        The landing page for the application that implements the authentication
-        system.
-      </p>
-
-      <button
-        onClick={handleLogout}
-        className="bg-blue-500 w-15 rounded text-center"
-      >
-        Logout
-      </button>
-
-      <Image src="/auth.jpeg" alt="auth-image" width={500} height={500} />
-
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-50">
       <Toaster />
+
+      <div className="text-center">
+        <h1 className="mb-2 text-4xl font-bold text-gray-800">
+          NextJS Authentication
+        </h1>
+        <p className="max-w-md mb-8 text-gray-600">
+          The landing page for the application that implements the
+          authentication system.
+        </p>
+
+        <button
+          onClick={handleLogout}
+          className="px-6 py-2 mb-8 text-sm font-medium leading-6 text-white uppercase transition bg-blue-500 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-600 focus:outline-none"
+        >
+          Logout
+        </button>
+
+        <div className="relative w-full max-w-lg h-auto overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src="/auth.jpeg"
+            alt="Auth Image"
+            layout="responsive"
+            width={500}
+            height={500}
+            objectFit="cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }

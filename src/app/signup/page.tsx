@@ -34,80 +34,104 @@ const SignUp = () => {
   };
 
   useEffect(() => {
-    if (
+    setIsValidData(
       user.email.length > 0 &&
-      user.password.length > 0 &&
-      user.username.length > 0
-    ) {
-      setIsValidData(true);
-    } else {
-      setIsValidData(false);
-    }
+        user.password.length > 0 &&
+        user.username.length > 0
+    );
   }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-2xl mb-4">{loading ? "Processing" : "Sign Up"}</h1>
-      <hr />
-      <label htmlFor="username">Username</label>
-      <input
-        id="username"
-        type="text"
-        value={user.username}
-        onChange={(e) =>
-          setUser((prev) => ({ ...prev, username: e.target.value }))
-        }
-        placeholder="username"
-        className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
-      />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-xl shadow-md">
+        <h1 className="text-2xl font-semibold text-center text-gray-800">
+          {loading ? "Processing" : "Sign Up"}
+        </h1>
+        <div className="space-y-4">
+          <div>
+            <label
+              htmlFor="username"
+              className="text-sm font-medium text-gray-600"
+            >
+              Username
+            </label>
+            <input
+              id="username"
+              type="text"
+              value={user.username}
+              onChange={(e) =>
+                setUser((prev) => ({ ...prev, username: e.target.value }))
+              }
+              placeholder="Enter your username"
+              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
 
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="text"
-        value={user.email}
-        onChange={(e) =>
-          setUser((prev) => ({ ...prev, email: e.target.value }))
-        }
-        placeholder="email"
-        className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
-      />
+          <div>
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-600"
+            >
+              Email
+            </label>
+            <input
+              id="email"
+              type="text"
+              value={user.email}
+              onChange={(e) =>
+                setUser((prev) => ({ ...prev, email: e.target.value }))
+              }
+              placeholder="Enter your email"
+              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
 
-      <label htmlFor="password">Password</label>
-      <div className="relative flex item-center">
-        <input
-          id="password"
-          type={showPassword ? "text" : "password"}
-          autoComplete="new-password"
-          value={user.password}
-          onChange={(e) =>
-            setUser((prev) => ({ ...prev, password: e.target.value }))
-          }
-          placeholder="password"
-          className="p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 text-black"
-        />
+          <div>
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-gray-600"
+            >
+              Password
+            </label>
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                autoComplete="new-password"
+                value={user.password}
+                onChange={(e) =>
+                  setUser((prev) => ({ ...prev, password: e.target.value }))
+                }
+                placeholder="Enter your password"
+                className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <button
+                onClick={() => setShowPassword(!showPassword)}
+                type="button"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
+          </div>
+        </div>
+
         <button
-          onClick={() => setShowPassword(!showPassword)}
-          type="button"
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+          disabled={!isValidData}
+          onClick={onSignUp}
+          className={`w-full p-2 text-white bg-blue-500 rounded-lg ${
+            isValidData ? "hover:bg-blue-600" : "cursor-not-allowed opacity-50"
+          } focus:outline-none`}
         >
-          <span className="text-black mb-4">
-            {showPassword ? "Hide" : "Show"}
-          </span>
+          Sign Up
         </button>
+
+        <div className="text-center">
+          <Link href="/login" className="text-sm text-blue-500 hover:underline">
+            Visit Login Page
+          </Link>
+        </div>
       </div>
-
-      <button
-        disabled={!isValidData}
-        onClick={onSignUp}
-        className={`p-2 border border-grey-300 rounded-lg mb-4 focus:outline-none focus:border-grey-600 ${
-          isValidData ? "cursor-pointer" : "cursor-not-allowed opacity-50"
-        }`}
-      >
-        Sign Up
-      </button>
-
-      <Link href="/login">Visit Login Page</Link>
     </div>
   );
 };
