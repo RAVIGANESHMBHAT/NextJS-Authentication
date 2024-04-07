@@ -74,3 +74,10 @@ npm run dev
 or
 ```bash
 yarn dev
+```
+
+## Useful links
+NextJS - https://nextjs.org/docs/getting-started/installation
+Mailtrap - https://mailtrap.io/signin
+Nodemailer - https://www.nodemailer.com/
+MongoDb Atlas - https://www.mongodb.com/cloud/atlas/register
