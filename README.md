@@ -23,10 +23,10 @@ Whether you're looking to implement authentication in your Next.js project or se
   ![tuxpi com 1712472322](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/4d8c5b0b-d904-4d69-ad78-77dc39db1b48)
 
 - Successful Email Verification
-  ![tuxpi com 1712474204](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/95ab39f6-e7cf-4f5e-af4b-2dae34f81baa)
+![tuxpi com 1712474775](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/230897ea-56a3-4564-a642-0fde4d355fe8)
 
 - Failed to Verify Email
-  ![tuxpi com 1712474260](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/77d2b1a2-11f5-40a9-bccd-7efded18f141)
+ ![tuxpi com 1712474721](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/77edc349-b923-4f88-988f-f6ad51190296)
 
 - Login
   ![tuxpi com 1712470649](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/8de32408-99f8-4a2c-8847-50fef069897e)
