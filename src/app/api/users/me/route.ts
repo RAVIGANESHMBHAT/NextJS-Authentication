@@ -12,12 +12,7 @@ export async function POST(request: NextRequest) {
     const user = await User.findById(userId).select("-password");
 
     if (!user) {
-      return (
-        NextResponse.json({
-          message: "User not found",
-        }),
-        { status: 404 }
-      );
+      return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
     return NextResponse.json({
       data: user,

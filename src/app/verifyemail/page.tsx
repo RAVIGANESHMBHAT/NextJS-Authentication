@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 
 import Link from "next/link";
 import axios from "axios";
@@ -8,13 +8,16 @@ import { useSearchParams } from "next/navigation";
 
 const VerifyEmail = () => {
   const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState("");
+  console.log({ token });
 
   const verifyEmail = async () => {
     try {
       const response = await axios.post("/api/users/verifyemail", {
-        token: searchParams.get("token"),
+        token,
       });
       if (response.status === 200) {
         setVerified(true);
@@ -64,4 +67,10 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={<p className="flex justify-center items-center min-h-screen">Loading...</p>}>
+      <VerifyEmail />
+    </Suspense>
+  );
+}
