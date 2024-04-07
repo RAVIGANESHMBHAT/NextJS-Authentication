@@ -36,13 +36,13 @@ export const sendEmail = async ({
       host: "sandbox.smtp.mailtrap.io",
       port: 2525,
       auth: {
-        user: "054e62b28dbd76",
-        pass: "990c81783a5ee7",
+        user: process.env.NODE_MAILER_USER,
+        pass: process.env.NODE_MAILER_PASSWORD,
       },
     });
 
     const mailOptions = {
-      from: "raviganeshmbhat999@gmail.com",
+      from: process.env.NODE_MAILER_FROM_MAIL,
       to: email,
       subject:
         emailType === EmailType.VERIFY
