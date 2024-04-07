@@ -65,10 +65,19 @@ or
 yarn install
 ```
 
-4. Run the development server
+4. Create `.env` file and enter valid data. (Refer to `.env.sample` file)
+
+5. Run the development server
 ```bash
 npm run dev
 ```
 or
 ```bash
 yarn dev
+```
+
+## Useful links
+- NextJS - https://nextjs.org/docs/getting-started/installation
+- Mailtrap - https://mailtrap.io/signin
+- Nodemailer - https://www.nodemailer.com/
+- MongoDb Atlas - https://www.mongodb.com/cloud/atlas/register
