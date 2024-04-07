@@ -1,4 +1,4 @@
-![tuxpi com 1712474260](https://github.com/RAVIGANESHMBHAT/NextJS-Authentication/assets/41186067/9dce2343-870f-4dbb-9e19-1249fc2a6ea2)# Next.js Authentication App
+# Next.js Authentication App
 
 Explore a Next.js application designed to seamlessly integrate user authentication, providing a secure and intuitive user experience. This repository contains a fully functional Next.js project featuring a robust authentication system, complete with login, logout, and signup functionalities. Utilizing modern technologies such as Axios for API requests and react-hot-toast for elegant notifications, this app showcases best practices in handling user sessions and protecting routes.
 
