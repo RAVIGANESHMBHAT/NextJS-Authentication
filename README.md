@@ -4,12 +4,14 @@ Explore a Next.js application designed to seamlessly integrate user authenticati
 
 ## Key Features
 
-- **Secure Authentication Flow**: Implementing a streamlined login and signup process, ensuring user credentials are handled securely.
+- **Secure Authentication Flow**: Implementing a streamlined login and signup process, ensuring user credentials are handled securely. Passwords are encrypted using `bcryptjs` before storing in the database.
+- **Email Confirmation**: Utilizing `Nodemailer` and `Mailtrap` to send email confirmations during the signup process, enhancing security and user verification.
 - **Session Management**: Efficiently managing user sessions, with seamless integration of logout functionality to ensure user data protection.
 - **Interactive UI**: Leveraging Tailwind CSS for a beautifully designed, responsive user interface that enhances usability and user engagement.
 - **Client-Side Navigation**: Utilizing Next.js's built-in routing capabilities to provide a smooth, SPA-like experience across the authentication pages.
-- **Toast Notifications**: Integrating react-hot-toast to display informative success and error messages, improving the overall user interaction.
+- **Toast Notifications**: Integrating `react-hot-toast` to display informative success and error messages, improving the overall user interaction.
 - **Profile Management**: A dedicated profile page that allows users to view their details, reinforcing the app's authentication capabilities.
+- **Data Storage**: Using MongoDB Atlas as the database solution for storing user details securely and efficiently.
 
 Whether you're looking to implement authentication in your Next.js project or seeking inspiration for creating engaging user interfaces with Tailwind CSS, this repository offers valuable insights and practical code examples. Dive into the code to discover how to build secure, scalable, and user-friendly web applications with Next.js.
 
