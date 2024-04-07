@@ -45,7 +45,7 @@ const SignUp = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-xl shadow-md">
         <h1 className="text-2xl font-semibold text-center text-gray-800">
-          {loading ? "Processing" : "Sign Up"}
+          {loading ? "Processing..." : "Sign Up"}
         </h1>
         <div className="space-y-4">
           <div>
@@ -63,7 +63,7 @@ const SignUp = () => {
                 setUser((prev) => ({ ...prev, username: e.target.value }))
               }
               placeholder="Enter your username"
-              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
             />
           </div>
 
@@ -82,7 +82,7 @@ const SignUp = () => {
                 setUser((prev) => ({ ...prev, email: e.target.value }))
               }
               placeholder="Enter your email"
-              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
             />
           </div>
 
@@ -103,7 +103,7 @@ const SignUp = () => {
                   setUser((prev) => ({ ...prev, password: e.target.value }))
                 }
                 placeholder="Enter your password"
-                className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
